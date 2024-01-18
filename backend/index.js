@@ -3,6 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import User from "./models/User.js";
 import dotenv from "dotenv";
+import seedRouter from "./routes/SeedRouter.js";
+import productRouter from './routes/productRouter.js'
 
 dotenv.config();
 
@@ -16,6 +18,15 @@ app.use(express.urlencoded({extended: false}));
 const PORT = process.env.PORT || 8080;
 
 //routes:
+app.use("/api/v1/seed", seedRouter);
+
+app.use("/api/v1/products", productRouter);
+
+app.use((err, req, res, next) => {
+    res.status(500).send({message: err.message});
+})
+
+
 
 app.post('/addUser', async(req, res) => {
     // const user = req.body.user
