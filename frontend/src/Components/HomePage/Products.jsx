@@ -3,18 +3,51 @@ import Col from 'react-bootstrap/Col'
 import Product from './Product.jsx'
 import PropTypes from 'prop-types'
 
-const Products = ({products}) => {
+
+const Products = ({ products }) => {
   return (
     <Row>
-        {products.map((product) => {
-            <Col key={product.token} lg={3} md={4} sm={6} xs={12}>
-                <Product product={product}/>
-            </Col>
-        })}
+      {products.map((product) => (
+        <Col key={product.token} lg={3} md={4} sm={6} xs={12}>
+          <Product product={product} />
+        </Col>
+      ))}
     </Row>
-  )
-}
+  );
+};
 
-Products.propTypes = {products: PropTypes.array}
+Products.propTypes = { products: PropTypes.array };
 
-export default Products
+export default Products;
+
+
+
+//not working
+// const Products = ({products}) => {
+//   return (
+//     <Row>
+//         {products.map((product) => {
+//             <Col key={product.token} lg={3} md={4} sm={6} xs={12}>
+//                 <Product product={product}/>
+//             </Col>
+//         })}
+//     </Row>
+//   )
+// }
+
+
+//should works
+// const Products = ({products}) => {
+//   return (
+//     <Row>
+//         {products.map((product) => {
+//           return (
+
+//             <Col key={product.token} lg={3} md={4} sm={6} xs={12}>
+//                 <Product product={product}/>
+//             </Col>
+//         )
+//         })}
+//     </Row>
+//   )
+// }

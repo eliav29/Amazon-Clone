@@ -3,7 +3,7 @@ const homePageReducer = (state, action) => {
         case 'GET_REQUEST': {
             return {...state, loading: true}
         }
-        case 'GET_FAILED': {
+        case 'GET_FAIL': {
             return {...state, loading: false, error: action.payload}
         }
         case 'GET_SUCCESS': {
