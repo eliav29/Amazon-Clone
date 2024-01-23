@@ -1,23 +1,26 @@
-import { useState } from 'react'
 import './App.css'
+import "react-toastify/dist/ReactToastify.css"
 import Title from './Components/Shered/Title.jsx'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import {HomePage} from './Pages/HomePage.jsx'
 import Footer from './Components/Shered/Footer.jsx'
 import Header from './Components/Shered/Header.jsx'
+import { ToastContainer } from 'react-toastify'
+import Signin from './Pages/Signin.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <BrowserRouter>
       <div className='d-flex flex-column side-allPage min-width'>
+      <ToastContainer position="bottom-center" limit={1}/>
         <Header/>
         <main>
           <Container className='mt-3'>
             <Routes>
               <Route path='/' element={<HomePage/>} />
+              <Route path='/signin' element={<Signin/>} />
             </Routes>
           </Container>
         </main>
