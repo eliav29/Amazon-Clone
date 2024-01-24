@@ -15,7 +15,6 @@ export const StoreProvider = ({children}) => {
     const body = { state, dispatch };
 
     return <Store.Provider value={body}>{ children }</Store.Provider>
-
 }
 
 StoreProvider.propTypes = { children: PropTypes.node};

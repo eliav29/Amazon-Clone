@@ -8,6 +8,7 @@ import Footer from './Components/Shered/Footer.jsx'
 import Header from './Components/Shered/Header.jsx'
 import { ToastContainer } from 'react-toastify'
 import Signin from './Pages/Signin.jsx'
+import Signup from './Pages/Signup.jsx'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               <Route path='/' element={<HomePage/>} />
               <Route path='/signin' element={<Signin/>} />
+              <Route path='/signup' element={<Signup/>} />
             </Routes>
           </Container>
         </main>
