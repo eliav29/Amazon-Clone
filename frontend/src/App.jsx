@@ -9,6 +9,7 @@ import Header from './Components/Shered/Header.jsx'
 import { ToastContainer } from 'react-toastify'
 import Signin from './Pages/Signin.jsx'
 import Signup from './Pages/Signup.jsx'
+import Description from './Pages/Description.jsx'
 
 function App() {
 
@@ -23,12 +24,13 @@ function App() {
               <Route path='/' element={<HomePage/>} />
               <Route path='/signin' element={<Signin/>} />
               <Route path='/signup' element={<Signup/>} />
+              <Route path='/product/:token' element={<Description/>} />
             </Routes>
           </Container>
         </main>
         <Footer/>
       </div>
-      <Title title="eliav">
+      <Title title="AMAZON">
       </Title>
     </BrowserRouter>
   )

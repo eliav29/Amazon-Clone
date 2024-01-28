@@ -4,10 +4,18 @@ import PropTypes from "prop-types";
 
 export const Store = createContext();
 
-const initialState = { 
+const initialState = {
     userInfo: localStorage.getItem("userInfo") ? 
         JSON.parse(localStorage.getItem("userInfo")) 
         : null,
+    cart: {
+        cartItems: localStorage.getItem("cartItems") ? 
+        JSON.parse(localStorage.getItem("cartItems")) : [],
+
+        shippingAddress: localStorage.getItem("shippingAddress") ? JSON.parse(localStorage.getItem("shippingAddress")) : [],
+        
+        paymentMethod: localStorage.getItem("paymentMethod") ? JSON.parse(localStorage.getItem("paymentMethod")) : "",
+    }
 };
 
 export const StoreProvider = ({children}) => {

@@ -24,19 +24,11 @@ app.use("/api/v1/products", productRouter);
 
 app.use("/api/v1/users", userRouter);
 
+// app.use("/api/v1/product/:id", productRouter);
+
 app.use((err, req, res, next) => {
     res.status(500).send({message: err.message});
 })
-
-
-
-// app.post('/addUser', async(req, res) => {
-//     // const user = req.body.user
-//     // const {user} = req.body;
-//     const newUser = await User.create(req.body);
-//     res.send(newUser);
-//     // await User.create(user);
-// });
 
 mongoose.connect(process.env.MONGO_CONNECTION_STRING)
 .then(() => {
