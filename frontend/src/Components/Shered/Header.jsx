@@ -4,7 +4,7 @@ import Badge from 'react-bootstrap/Badge'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
 import {LinkContainer} from 'react-router-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import SearchBox from './SearchBox'
 import { Store } from '../../store'
 import { USER_SIGNOUT } from '../../Reducers/Actions'
@@ -13,6 +13,8 @@ import { USER_SIGNOUT } from '../../Reducers/Actions'
 const Header = () => {
     const {state, dispatch: ctxDispatch} = useContext(Store);
     const {userInfo, cart: {cartItems}} = state;
+    const navigate = useNavigate();
+    const location = useLocation();
     const signoutHandler = () => {
         ctxDispatch({type: USER_SIGNOUT});
         localStorage.removeItem('userInfo');
@@ -24,6 +26,9 @@ const Header = () => {
     <header>
         <NavBar bg='dark' veriant='dark'>
             <Container>
+            <Link onClick={() => navigate(-1)}>
+                            {location.pathname !== '/' && <i className="fa fa-arrow-left text-white align-arrow-right"> Back</i>}
+            </Link>
             <LinkContainer to="/">
                         <NavBar.Brand>
                             <img src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695" alt="Amazon logo" width={80}/>
@@ -40,18 +45,18 @@ const Header = () => {
                             )}
                         </Link>
                     </nav>
-                    {userInfo? (
+                    {userInfo ? (
                             <NavDropdown className='text-white' title={userInfo.name}>
                                 <NavDropdown.Divider/>
                                 <Link to="#signout" className='dropdown item' onClick={signoutHandler}>
                                     Sign-Out
                                 </Link>        
                             </NavDropdown>
-                        ) :
+                        ) : (
                         <Link to="/signin" className='text-white nac-link'>
                             Sign-in
                         </Link>
-                    } 
+                    )} 
             </Container>
         </NavBar>
     </header>

@@ -4,7 +4,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { USER_SIGNIN } from "../Reducers/Actions";
-import { getError } from "../Utils";
+import { getError } from "../utils";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Title from "../Components/Shered/Title";
@@ -24,6 +24,12 @@ const Signup = () => {
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
+
+  useEffect(() => {
+    if(userInfo)
+      navigate(redirect)
+  }, [navigate, redirect, userInfo])
+  
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -97,7 +103,7 @@ const Signup = () => {
         </div>
         <div className="mb-3">
           Already have an account?{" "}
-          <Link to={`/signin`}>Sign in</Link>
+          <Link to={`/signin?redirect=${redirect}`}>Sign in</Link>
         </div>
       </Form>
     </Container>
