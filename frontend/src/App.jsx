@@ -11,6 +11,7 @@ import Signin from './Pages/Signin.jsx'
 import Signup from './Pages/Signup.jsx'
 import Description from './Pages/Description.jsx'
 import Cart from './Pages/Cart.jsx'
+import Shipping from './Pages/Shipping.jsx'
 
 function App() {
 
@@ -22,11 +23,12 @@ function App() {
         <main>
           <Container className='mt-3'>
             <Routes>
-              <Route path='/' element={<HomePage/>} />
-              <Route path='/signin' element={<Signin/>} />
-              <Route path='/signup' element={<Signup/>} />
-              <Route path='/product/:token' element={<Description/>} />
-              <Route path='/cart' element={<Cart/>} />
+              <Route path='/' element={<HomePage/>}/>
+              <Route path='/signin' element={<Signin/>}/>
+              <Route path='/signup' element={<Signup/>}/>
+              <Route path='/product/:token' element={<Description/>}/>
+              <Route path='/cart' element={<Cart/>}/>
+              <Route path='/shipping' element={<Shipping/>}/>
             </Routes>
           </Container>
         </main>
