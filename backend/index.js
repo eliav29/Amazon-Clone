@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import seedRouter from "./routes/SeedRouter.js";
 import productRouter from './routes/productRouter.js'
 import userRouter from "./routes/userRouter.js";
+import orderRouter from "./routes/orderRouter.js";
 
 dotenv.config();
 
@@ -23,6 +24,9 @@ app.use("/api/v1/seed", seedRouter);
 app.use("/api/v1/products", productRouter);
 
 app.use("/api/v1/users", userRouter);
+
+app.use("/api/v1/orders", orderRouter);
+
 
 // app.use("/api/v1/product/:id", productRouter);
 

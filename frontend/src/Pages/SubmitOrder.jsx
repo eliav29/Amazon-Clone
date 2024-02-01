@@ -7,9 +7,12 @@ import Title from '../Components/Shered/Title';
 import CheckoutSteps from '../Components/Shered/CheckoutSteps';
 import { Col, Row } from 'react-bootstrap';
 import OrderSummary from '../Components/Shered/OrderSummary';
+import PaymentSummary from '../Components/Shered/PaymentSummary';
+import axios from 'axios';
+import { CLEAR_CART } from '../Reducers/Actions';
 
 const SubmitOrder = () => {
-    const [loading, setLoading] = useState();
+    const [loading, setLoading] = useState(false);
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const { cart, userInfo } = state;
     const navigate = useNavigate();
@@ -36,9 +39,26 @@ const SubmitOrder = () => {
     const submitOrderHandler = async () => {
         try{
             setLoading(true);
+            const {data} = await axios.post('/api/v1/orders', {
+                orderItems: cart.cartItems, 
+                shippingAddress: cart.shippingAddress, 
+                paymentMethod: cart.paymentMethod, 
+                itemsPrice: cart.itemsPrice, 
+                shippingPrice: cart.shippingPrice, 
+                taxPrice: cart.taxPrice, 
+                totalPrice: cart.totalPrice
+            }, {
+                headers: {authorization: `Bearer ${userInfo.token}`}
+            })
+
+            ctxDispatch({type: CLEAR_CART});
+            localStorage.removeItem("cartItems");
+            navigate(`/order/${data.order._id}`);
+
             // Post request add order
             // Delete cart item from state and loacalStorage
             // go to order details page/id or order
+            
         }catch(error){
             toast.error(getError(error));
         }finally{
@@ -56,7 +76,7 @@ const SubmitOrder = () => {
                     <OrderSummary cart={cart} status="submitOrder"/>
                 </Col>
                 <Col md={4}>
-                    {/* <Checkout cartItems={cartItems} checkOutHandler={checkOutHandler} /> */}
+                    <PaymentSummary loading={loading} cart={cart} submitOrderHandler={submitOrderHandler} status="submitOrder" ></PaymentSummary>
                 </Col>
             </Row>
         </div>
