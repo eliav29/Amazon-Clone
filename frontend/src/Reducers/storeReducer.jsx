@@ -1,4 +1,4 @@
-import { USER_SIGNIN, USER_SIGNOUT, ADD_TO_CART, REMOVE_FROM_CART, SAVE_SHIPPING_ADDRESS } from "./Actions";
+import { USER_SIGNIN, USER_SIGNOUT, ADD_TO_CART, REMOVE_FROM_CART, SAVE_SHIPPING_ADDRESS, SAVE_PAYMENT_METHOD } from "./Actions";
 
 const storeReducer = (state, {type, payload}) => {
     switch(type){
@@ -30,6 +30,9 @@ const storeReducer = (state, {type, payload}) => {
         case SAVE_SHIPPING_ADDRESS: {
             localStorage.setItem("shippingAddress", JSON.stringify(payload));
             return {...state, cart: {...state.cart, shippingAddress: payload}}
+        }
+        case SAVE_PAYMENT_METHOD: {
+            return {...state, cart: {...state.cart, paymentMethod: payload}};
         }
         default: return {...state};
     }

@@ -12,6 +12,7 @@ import Signup from './Pages/Signup.jsx'
 import Description from './Pages/Description.jsx'
 import Cart from './Pages/Cart.jsx'
 import Shipping from './Pages/Shipping.jsx'
+import Payment from './Pages/Payment.jsx'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
               <Route path='/product/:token' element={<Description/>}/>
               <Route path='/cart' element={<Cart/>}/>
               <Route path='/shipping' element={<Shipping/>}/>
+              <Route path='/payment' element={<Payment/>}/>
             </Routes>
           </Container>
         </main>

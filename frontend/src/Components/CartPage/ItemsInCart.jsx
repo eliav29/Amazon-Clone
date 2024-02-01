@@ -17,7 +17,7 @@ const ItemsInCart = ({cartItems, updateCartHandler, removeItemHandler}) => {
                         {" "}
                         <span>{item.quantity}</span>
                         {" "}
-                        <Button onClick={()=>updateCartHandler(item, item.quantity + 1)} variant="light"><i className='fa fa-plus-circle'></i></Button>+
+                        <Button onClick={()=>updateCartHandler(item, item.quantity + 1)} disabled={item.quantity === item.countInStock} variant="light"><i className='fa fa-plus-circle'></i></Button>+
                         </Col>
                         <Col md={1}>{item.price}</Col>
                         <Col md={1}><Button variant='light' onClick={() => removeItemHandler(item)}><i className='fas fa-trash'></i></Button></Col>

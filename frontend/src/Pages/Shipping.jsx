@@ -7,13 +7,7 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { SAVE_SHIPPING_ADDRESS } from '../Reducers/Actions';
 
 const Shipping = () => {
-
-    // const [fullName, setFullName] = useState()
-    // const [address, setAddress] = useState()
-    // const [city, setCity] = useState()
-    // const [postalCode, setPostalCode] = useState()
-    // const [country, setCountry] = useState()
-
+    
     const navigate = useNavigate();
     const {state, dispatch: ctxDispatch} = useContext(Store);
     const {userInfo, cart: {cartItems}} = state;
