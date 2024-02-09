@@ -27,9 +27,6 @@ app.use("/api/v1/users", userRouter);
 
 app.use("/api/v1/orders", orderRouter);
 
-
-// app.use("/api/v1/product/:id", productRouter);
-
 app.use((err, req, res, next) => {
     res.status(500).send({message: err.message});
 })

@@ -14,6 +14,7 @@ import Cart from './Pages/Cart.jsx'
 import Shipping from './Pages/Shipping.jsx'
 import Payment from './Pages/Payment.jsx'
 import SubmitOrder from './Pages/SubmitOrder.jsx'
+import Search from './Pages/Search.jsx'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
               <Route path='/shipping' element={<Shipping/>}/>
               <Route path='/payment' element={<Payment/>}/>
               <Route path='/placeorder' element={<SubmitOrder/>}/>
+              <Route path='/search' element={<Search/>}/>
             </Routes>
           </Container>
         </main>

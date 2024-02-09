@@ -2,7 +2,7 @@ import React from 'react'
 import { PropTypes } from 'prop-types'
 import { Card, CardHeader, Col, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import MessageBox from '../MessageBox';
+import MessageBox from '../Shered/MessageBox';
 
 const OrderSummary = ({cart, status, isDelivered}) => {
   return (

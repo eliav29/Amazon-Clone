@@ -3,7 +3,7 @@ import Title from '../Components/Shered/Title'
 import homePageReducer from '../Reducers/homePageReducer'
 import axios from 'axios'
 import Loading from '../Components/Shered/Loading'
-import MessageBox from '../Components/MessageBox'
+import MessageBox from '../Components/Shered/MessageBox'
 import Products from '../Components/HomePage/Products'
 import { GET_REQUEST, GET_SUCCESS, GET_FAIL } from '../Reducers/Actions'
 

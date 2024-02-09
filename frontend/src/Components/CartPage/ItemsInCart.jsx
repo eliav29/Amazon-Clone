@@ -1,6 +1,6 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
-import MessageBox from '../MessageBox';
+import MessageBox from '../Shered/MessageBox';
 import { Button, Col, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 

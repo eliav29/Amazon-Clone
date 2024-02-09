@@ -1,9 +1,9 @@
 import Alert from 'react-bootstrap/Alert'
 import PropTypes from 'prop-types'
 
-const MessageBox = ({variant, childern}) => {
+const MessageBox = ({variant, children}) => {
   return (
-    <Alert variant={variant || 'info'}>{childern}</Alert>
+    <Alert variant={variant || 'info'}>{children}</Alert>
   )
 }
 
