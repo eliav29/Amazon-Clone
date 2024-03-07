@@ -7,7 +7,7 @@ import './index.css'
 import axios from 'axios';
 import { StoreProvider } from './store.jsx';
 
-axios.defaults.baseURL = import.meta.env.DEV ? "http://localhost:8080" : 'https://like-amazon-six.vercel.app/';
+axios.defaults.baseURL = import.meta.env.DEV ? "http://localhost:8080" : 'https://like-amazon-six.vercel.app';
 
 console.log(import.meta.env.DEV)
 console.log(import.meta.env.PROD)
