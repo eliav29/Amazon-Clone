@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Rating from '../Shered/Rating';
 import {Link} from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import {Store} from '../../Store.jsx';
+import { Store } from '../../store.jsx';
 import { useContext } from 'react';
 import { addToCartHandler } from '../../utils.jsx';
 
