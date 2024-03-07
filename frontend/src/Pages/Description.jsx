@@ -4,7 +4,7 @@ import { Store } from '../store.jsx';
 import axios from 'axios';
 import descriptionReducer from '../Reducers/descriptionReducer.jsx';
 import { GET_FAIL, GET_REQUEST, GET_SUCCESS } from '../Reducers/Actions.jsx';
-import { addToCartHandler, getError } from '../Utils.jsx';
+import { addToCartHandler, getError } from '../utils.jsx';
 import Loading from '../Components/Shered/Loading.jsx';
 import MessageBox from '../Components/Shered/MessageBox.jsx';
 import Row from 'react-bootstrap/esm/Row.js';
