@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import seedRouter from "./routes/SeedRouter.js";
+import seedRouter from "./routes/seedRouter.js";
 import productRouter from './routes/productRouter.js'
 import userRouter from "./routes/userRouter.js";
 import orderRouter from "./routes/orderRouter.js";
