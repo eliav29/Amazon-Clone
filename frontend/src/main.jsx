@@ -7,7 +7,10 @@ import './index.css'
 import axios from 'axios';
 import { StoreProvider } from './store.jsx';
 
-axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.baseURL = import.meta.env.DEV ? "http://localhost:8080" : 'https://like-amazon-six.vercel.app/';
+
+console.log(import.meta.env.DEV)
+console.log(import.meta.env.PROD)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
