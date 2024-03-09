@@ -16,7 +16,6 @@ const SearchBox = () => {
     
     //function to take query parameters and return a correct path
     const filterURI = getFilterURI(search, {query: query});
-    console.log('dfsdfdsjlfksdjflksdjaflkajsdfldsakjdflasjkdflaksjdflkasjdlfkajsdlfkjasldkfjlsadkjflaskjdflaskjdf')
     navigate(filterURI);
 
   }, [query]);
